@@ -142,41 +142,81 @@ print("Recorrido BFS desde A:", BFS(grafo, 'A'))
                     <div class="step">
                         <h4>Paso 1: Inicio en A</h4>
                         <svg width="250" height="200" viewBox="0 0 250 200" class="graph-svg">
-                            <line x1="125" y1="30" x2="75" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="125" y1="30" x2="175" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="75" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="175" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
+                            <defs>
+                                <linearGradient id="bfsE1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#0099ff;stop-opacity:0.8" />
+                                </linearGradient>
+                                <radialGradient id="bfsNA" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#00ff00;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00cc00;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="bfsNP" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="bfsGlow">
+                                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                            </defs>
+                            <line x1="125" y1="30" x2="75" y2="100" stroke="url(#bfsE1)" stroke-width="2.5"></line>
+                            <line x1="125" y1="30" x2="175" y2="100" stroke="url(#bfsE1)" stroke-width="2.5"></line>
+                            <line x1="75" y1="100" x2="125" y2="170" stroke="url(#bfsE1)" stroke-width="2.5"></line>
+                            <line x1="175" y1="100" x2="125" y2="170" stroke="url(#bfsE1)" stroke-width="2.5"></line>
                             
-                            <circle cx="125" cy="30" r="10" fill="#2ecc71" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="75" cy="100" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="175" cy="100" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="125" cy="170" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
+                            <circle cx="125" cy="30" r="10" fill="url(#bfsNA)" stroke="#00ff00" stroke-width="2" filter="url(#bfsGlow)"></circle>
+                            <circle cx="75" cy="100" r="10" fill="url(#bfsNP)" stroke="#00ffff" stroke-width="2" filter="url(#bfsGlow)"></circle>
+                            <circle cx="175" cy="100" r="10" fill="url(#bfsNP)" stroke="#00ffff" stroke-width="2" filter="url(#bfsGlow)"></circle>
+                            <circle cx="125" cy="170" r="10" fill="url(#bfsNP)" stroke="#00ffff" stroke-width="2" filter="url(#bfsGlow)"></circle>
                             
-                            <text x="120" y="37" font-size="12" font-weight="bold" fill="white">A</text>
-                            <text x="70" y="107" font-size="12" font-weight="bold" fill="black">B</text>
-                            <text x="170" y="107" font-size="12" font-weight="bold" fill="black">C</text>
-                            <text x="120" y="177" font-size="12" font-weight="bold" fill="black">D</text>
+                            <text x="125" y="37" font-size="12" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                            <text x="75" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                            <text x="175" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                            <text x="125" y="177" font-size="12" font-weight="bold" fill="white" text-anchor="middle">D</text>
                         </svg>
                         <p><strong>Cola:</strong> [A] | <strong>Visitados:</strong> {A}</p>
                     </div>
 
                     <div class="step">
-                        <h4>Paso 2: Desencolar A, encolar vecinos B y C</h4>
+                        <h4>Paso 2: Desencolar A, encolar B y C</h4>
                         <svg width="250" height="200" viewBox="0 0 250 200" class="graph-svg">
-                            <line x1="125" y1="30" x2="75" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="125" y1="30" x2="175" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="75" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="175" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
+                            <defs>
+                                <linearGradient id="bfsE2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#0099ff;stop-opacity:0.8" />
+                                </linearGradient>
+                                <radialGradient id="bfsNA2" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#00ff00;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00cc00;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="bfsNV" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#999999;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#666666;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="bfsNP2" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="bfsGlow2">
+                                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                            </defs>
+                            <line x1="125" y1="30" x2="75" y2="100" stroke="url(#bfsE2)" stroke-width="2.5"></line>
+                            <line x1="125" y1="30" x2="175" y2="100" stroke="url(#bfsE2)" stroke-width="2.5"></line>
+                            <line x1="75" y1="100" x2="125" y2="170" stroke="url(#bfsE2)" stroke-width="2.5"></line>
+                            <line x1="175" y1="100" x2="125" y2="170" stroke="url(#bfsE2)" stroke-width="2.5"></line>
                             
-                            <circle cx="125" cy="30" r="10" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="75" cy="100" r="10" fill="#2ecc71" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="175" cy="100" r="10" fill="#2ecc71" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="125" cy="170" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
+                            <circle cx="125" cy="30" r="10" fill="url(#bfsNV)" stroke="#999999" stroke-width="2" filter="url(#bfsGlow2)"></circle>
+                            <circle cx="75" cy="100" r="10" fill="url(#bfsNA2)" stroke="#00ff00" stroke-width="2" filter="url(#bfsGlow2)"></circle>
+                            <circle cx="175" cy="100" r="10" fill="url(#bfsNA2)" stroke="#00ff00" stroke-width="2" filter="url(#bfsGlow2)"></circle>
+                            <circle cx="125" cy="170" r="10" fill="url(#bfsNP2)" stroke="#00ffff" stroke-width="2" filter="url(#bfsGlow2)"></circle>
                             
-                            <text x="120" y="37" font-size="12" font-weight="bold" fill="white">A</text>
-                            <text x="70" y="107" font-size="12" font-weight="bold" fill="white">B</text>
-                            <text x="170" y="107" font-size="12" font-weight="bold" fill="white">C</text>
-                            <text x="120" y="177" font-size="12" font-weight="bold" fill="black">D</text>
+                            <text x="125" y="37" font-size="12" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                            <text x="75" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                            <text x="175" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                            <text x="125" y="177" font-size="12" font-weight="bold" fill="white" text-anchor="middle">D</text>
                         </svg>
                         <p><strong>Cola:</strong> [B, C] | <strong>Visitados:</strong> {A, B, C}</p>
                     </div>
@@ -184,20 +224,42 @@ print("Recorrido BFS desde A:", BFS(grafo, 'A'))
                     <div class="step">
                         <h4>Paso 3: Desencolar B, encolar D</h4>
                         <svg width="250" height="200" viewBox="0 0 250 200" class="graph-svg">
-                            <line x1="125" y1="30" x2="75" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="125" y1="30" x2="175" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="75" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="175" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
+                            <defs>
+                                <linearGradient id="bfsE3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#0099ff;stop-opacity:0.8" />
+                                </linearGradient>
+                                <radialGradient id="bfsNA3" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#00ff00;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00cc00;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="bfsNV3" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#999999;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#666666;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="bfsNP3" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="bfsGlow3">
+                                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                            </defs>
+                            <line x1="125" y1="30" x2="75" y2="100" stroke="url(#bfsE3)" stroke-width="2.5"></line>
+                            <line x1="125" y1="30" x2="175" y2="100" stroke="url(#bfsE3)" stroke-width="2.5"></line>
+                            <line x1="75" y1="100" x2="125" y2="170" stroke="url(#bfsE3)" stroke-width="2.5"></line>
+                            <line x1="175" y1="100" x2="125" y2="170" stroke="url(#bfsE3)" stroke-width="2.5"></line>
                             
-                            <circle cx="125" cy="30" r="10" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="75" cy="100" r="10" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="175" cy="100" r="10" fill="#2ecc71" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="125" cy="170" r="10" fill="#2ecc71" stroke="#2c3e50" stroke-width="2"></circle>
+                            <circle cx="125" cy="30" r="10" fill="url(#bfsNV3)" stroke="#999999" stroke-width="2" filter="url(#bfsGlow3)"></circle>
+                            <circle cx="75" cy="100" r="10" fill="url(#bfsNV3)" stroke="#999999" stroke-width="2" filter="url(#bfsGlow3)"></circle>
+                            <circle cx="175" cy="100" r="10" fill="url(#bfsNA3)" stroke="#00ff00" stroke-width="2" filter="url(#bfsGlow3)"></circle>
+                            <circle cx="125" cy="170" r="10" fill="url(#bfsNA3)" stroke="#00ff00" stroke-width="2" filter="url(#bfsGlow3)"></circle>
                             
-                            <text x="120" y="37" font-size="12" font-weight="bold" fill="white">A</text>
-                            <text x="70" y="107" font-size="12" font-weight="bold" fill="white">B</text>
-                            <text x="170" y="107" font-size="12" font-weight="bold" fill="white">C</text>
-                            <text x="120" y="177" font-size="12" font-weight="bold" fill="white">D</text>
+                            <text x="125" y="37" font-size="12" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                            <text x="75" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                            <text x="175" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                            <text x="125" y="177" font-size="12" font-weight="bold" fill="white" text-anchor="middle">D</text>
                         </svg>
                         <p><strong>Cola:</strong> [C, D] | <strong>Visitados:</strong> {A, B, C, D}</p>
                     </div>
@@ -322,20 +384,38 @@ def DFS_iterativo(grafo, inicio):
                     <div class="step">
                         <h4>Paso 1: Inicio en A</h4>
                         <svg width="250" height="200" viewBox="0 0 250 200" class="graph-svg">
-                            <line x1="125" y1="30" x2="75" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="125" y1="30" x2="175" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="75" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="175" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
+                            <defs>
+                                <linearGradient id="dfsE1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#c44569;stop-opacity:0.8" />
+                                </linearGradient>
+                                <radialGradient id="dfsNA" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#cc00cc;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="dfsNP" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#ffb3ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#cc88ff;stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="dfsGlow">
+                                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                            </defs>
+                            <line x1="125" y1="30" x2="75" y2="100" stroke="url(#dfsE1)" stroke-width="2.5"></line>
+                            <line x1="125" y1="30" x2="175" y2="100" stroke="url(#dfsE1)" stroke-width="2.5"></line>
+                            <line x1="75" y1="100" x2="125" y2="170" stroke="url(#dfsE1)" stroke-width="2.5"></line>
+                            <line x1="175" y1="100" x2="125" y2="170" stroke="url(#dfsE1)" stroke-width="2.5"></line>
                             
-                            <circle cx="125" cy="30" r="10" fill="#e74c3c" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="75" cy="100" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="175" cy="100" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="125" cy="170" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
+                            <circle cx="125" cy="30" r="10" fill="url(#dfsNA)" stroke="#ff00ff" stroke-width="2" filter="url(#dfsGlow)"></circle>
+                            <circle cx="75" cy="100" r="10" fill="url(#dfsNP)" stroke="#ffb3ff" stroke-width="2" filter="url(#dfsGlow)"></circle>
+                            <circle cx="175" cy="100" r="10" fill="url(#dfsNP)" stroke="#ffb3ff" stroke-width="2" filter="url(#dfsGlow)"></circle>
+                            <circle cx="125" cy="170" r="10" fill="url(#dfsNP)" stroke="#ffb3ff" stroke-width="2" filter="url(#dfsGlow)"></circle>
                             
-                            <text x="120" y="37" font-size="12" font-weight="bold" fill="white">A</text>
-                            <text x="70" y="107" font-size="12" font-weight="bold" fill="black">B</text>
-                            <text x="170" y="107" font-size="12" font-weight="bold" fill="black">C</text>
-                            <text x="120" y="177" font-size="12" font-weight="bold" fill="black">D</text>
+                            <text x="125" y="37" font-size="12" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                            <text x="75" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                            <text x="175" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                            <text x="125" y="177" font-size="12" font-weight="bold" fill="white" text-anchor="middle">D</text>
                         </svg>
                         <p><strong>Pila:</strong> [A] | <strong>Visitados:</strong> {A}</p>
                     </div>
@@ -343,20 +423,42 @@ def DFS_iterativo(grafo, inicio):
                     <div class="step">
                         <h4>Paso 2: Desapilar A, apilar B y C</h4>
                         <svg width="250" height="200" viewBox="0 0 250 200" class="graph-svg">
-                            <line x1="125" y1="30" x2="75" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="125" y1="30" x2="175" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="75" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="175" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
+                            <defs>
+                                <linearGradient id="dfsE2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#c44569;stop-opacity:0.8" />
+                                </linearGradient>
+                                <radialGradient id="dfsNA2" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#cc00cc;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="dfsNV" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#999999;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#666666;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="dfsNP2" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#ffb3ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#cc88ff;stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="dfsGlow2">
+                                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                            </defs>
+                            <line x1="125" y1="30" x2="75" y2="100" stroke="url(#dfsE2)" stroke-width="2.5"></line>
+                            <line x1="125" y1="30" x2="175" y2="100" stroke="url(#dfsE2)" stroke-width="2.5"></line>
+                            <line x1="75" y1="100" x2="125" y2="170" stroke="url(#dfsE2)" stroke-width="2.5"></line>
+                            <line x1="175" y1="100" x2="125" y2="170" stroke="url(#dfsE2)" stroke-width="2.5"></line>
                             
-                            <circle cx="125" cy="30" r="10" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="75" cy="100" r="10" fill="#e74c3c" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="175" cy="100" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="125" cy="170" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
+                            <circle cx="125" cy="30" r="10" fill="url(#dfsNV)" stroke="#999999" stroke-width="2" filter="url(#dfsGlow2)"></circle>
+                            <circle cx="75" cy="100" r="10" fill="url(#dfsNA2)" stroke="#ff00ff" stroke-width="2" filter="url(#dfsGlow2)"></circle>
+                            <circle cx="175" cy="100" r="10" fill="url(#dfsNP2)" stroke="#ffb3ff" stroke-width="2" filter="url(#dfsGlow2)"></circle>
+                            <circle cx="125" cy="170" r="10" fill="url(#dfsNP2)" stroke="#ffb3ff" stroke-width="2" filter="url(#dfsGlow2)"></circle>
                             
-                            <text x="120" y="37" font-size="12" font-weight="bold" fill="white">A</text>
-                            <text x="70" y="107" font-size="12" font-weight="bold" fill="white">B</text>
-                            <text x="170" y="107" font-size="12" font-weight="bold" fill="black">C</text>
-                            <text x="120" y="177" font-size="12" font-weight="bold" fill="black">D</text>
+                            <text x="125" y="37" font-size="12" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                            <text x="75" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                            <text x="175" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                            <text x="125" y="177" font-size="12" font-weight="bold" fill="white" text-anchor="middle">D</text>
                         </svg>
                         <p><strong>Pila:</strong> [B, C] | <strong>Visitados:</strong> {A, B}</p>
                     </div>
@@ -364,20 +466,42 @@ def DFS_iterativo(grafo, inicio):
                     <div class="step">
                         <h4>Paso 3: Desapilar B, apilar D</h4>
                         <svg width="250" height="200" viewBox="0 0 250 200" class="graph-svg">
-                            <line x1="125" y1="30" x2="75" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="125" y1="30" x2="175" y2="100" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="75" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
-                            <line x1="175" y1="100" x2="125" y2="170" stroke="#34495e" stroke-width="2"></line>
+                            <defs>
+                                <linearGradient id="dfsE3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#c44569;stop-opacity:0.8" />
+                                </linearGradient>
+                                <radialGradient id="dfsNA3" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#cc00cc;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="dfsNV3" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#999999;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#666666;stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="dfsNP3" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#ffb3ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#cc88ff;stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="dfsGlow3">
+                                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                            </defs>
+                            <line x1="125" y1="30" x2="75" y2="100" stroke="url(#dfsE3)" stroke-width="2.5"></line>
+                            <line x1="125" y1="30" x2="175" y2="100" stroke="url(#dfsE3)" stroke-width="2.5"></line>
+                            <line x1="75" y1="100" x2="125" y2="170" stroke="url(#dfsE3)" stroke-width="2.5"></line>
+                            <line x1="175" y1="100" x2="125" y2="170" stroke="url(#dfsE3)" stroke-width="2.5"></line>
                             
-                            <circle cx="125" cy="30" r="10" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="75" cy="100" r="10" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="175" cy="100" r="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"></circle>
-                            <circle cx="125" cy="170" r="10" fill="#e74c3c" stroke="#2c3e50" stroke-width="2"></circle>
+                            <circle cx="125" cy="30" r="10" fill="url(#dfsNV3)" stroke="#999999" stroke-width="2" filter="url(#dfsGlow3)"></circle>
+                            <circle cx="75" cy="100" r="10" fill="url(#dfsNV3)" stroke="#999999" stroke-width="2" filter="url(#dfsGlow3)"></circle>
+                            <circle cx="175" cy="100" r="10" fill="url(#dfsNA3)" stroke="#ff00ff" stroke-width="2" filter="url(#dfsGlow3)"></circle>
+                            <circle cx="125" cy="170" r="10" fill="url(#dfsNA3)" stroke="#ff00ff" stroke-width="2" filter="url(#dfsGlow3)"></circle>
                             
-                            <text x="120" y="37" font-size="12" font-weight="bold" fill="white">A</text>
-                            <text x="70" y="107" font-size="12" font-weight="bold" fill="white">B</text>
-                            <text x="170" y="107" font-size="12" font-weight="bold" fill="black">C</text>
-                            <text x="120" y="177" font-size="12" font-weight="bold" fill="white">D</text>
+                            <text x="125" y="37" font-size="12" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                            <text x="75" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                            <text x="175" y="107" font-size="12" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                            <text x="125" y="177" font-size="12" font-weight="bold" fill="white" text-anchor="middle">D</text>
                         </svg>
                         <p><strong>Pila:</strong> [D, C] | <strong>Visitados:</strong> {A, B, D}</p>
                     </div>

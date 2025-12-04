@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 1: Introducción a los Grafos - Blog Técnico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>📊 Grafos</h1>
+                <p class="tagline">Blog Técnico sobre Estructura de Datos</p>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="post1.html" class="active">Introducción</a></li>
+                    <li><a href="post2.html">Representación</a></li>
+                    <li><a href="post3.html">Algoritmos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <article class="post">
+            <!-- POST HEADER -->
+            <header class="post-header-article">
+                <h1>Post #1: Introducción a los Grafos - Nodos, Aristas y Tipos</h1>
+                <div class="post-meta">
+                    <span class="post-date">📅 Diciembre 3, 2025</span>
+                    <span class="post-category">📚 Conceptos Fundamentales</span>
+                </div>
+            </header>
+
+            <!-- TABLE OF CONTENTS -->
+            <div class="toc">
+                <h3>📋 Contenido del Artículo</h3>
+                <ul>
+                    <li><a href="#intro">Introducción</a></li>
+                    <li><a href="#definicion">¿Qué es un Grafo?</a></li>
+                    <li><a href="#conceptos">Conceptos Clave</a></li>
+                    <li><a href="#tipos">Tipos de Grafos</a></li>
+                    <li><a href="#ejemplo">Ejemplo Visual</a></li>
+                    <li><a href="#conclusion">Conclusión</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTENT -->
+            <section id="intro" class="post-section">
+                <h2>Introducción</h2>
+                <p>Los grafos son una de las estructuras de datos más fundamentales y poderosas en la Ciencia de la Computación. 
+                Se utilizan para representar relaciones entre objetos en una amplia variedad de aplicaciones, desde redes de computadoras 
+                hasta redes sociales, sistemas de navegación GPS, y algoritmos de recomendación.</p>
+                <p>En este primer artículo, exploraremos los conceptos básicos de los grafos, entenderemos sus componentes principales 
+                y aprenderemos sobre los diferentes tipos que existen.</p>
+            </section>
+
+            <section id="definicion" class="post-section">
+                <h2>¿Qué es un Grafo?</h2>
+                <p>Un <strong>grafo</strong> es una estructura matemática compuesta por un conjunto de objetos llamados <strong>vértices</strong> 
+                (o <strong>nodos</strong>) que están conectados mediante <strong>aristas</strong> (o <strong>ejes</strong>). 
+                Formalmente, se define como:</p>
+                
+                <div class="definition-box">
+                    <p><strong>G = (V, E)</strong></p>
+                    <p>Donde:</p>
+                    <ul>
+                        <li><strong>V</strong> = Conjunto de vértices (nodos)</li>
+                        <li><strong>E</strong> = Conjunto de aristas (conexiones entre vértices)</li>
+                    </ul>
+                </div>
+
+                <p>Los grafos nos permiten modelar problemas complejos de manera visual y matemáticamente precisa. 
+                Ejemplos de aplicaciones reales incluyen:</p>
+                <ul class="applications-list">
+                    <li>🌐 Redes sociales (usuarios como nodos, amistades como aristas)</li>
+                    <li>🗺️ Sistemas de navegación GPS (ciudades como nodos, carreteras como aristas)</li>
+                    <li>📱 Internet y redes de computadoras</li>
+                    <li>🎮 Videojuegos (mapas, niveles, caminos)</li>
+                    <li>✈️ Rutas aéreas y logística</li>
+                </ul>
+            </section>
+
+            <section id="conceptos" class="post-section">
+                <h2>Conceptos Clave</h2>
+
+                <div class="concept-card">
+                    <h3>1. Vértices o Nodos (V)</h3>
+                    <p>Son los objetos fundamentales del grafo. Cada vértice puede representar una entidad diferente 
+                    (una ciudad, una persona, una página web, etc.). Se suelen etiquetar con letras (A, B, C) o números (1, 2, 3).</p>
+                    <p><strong>Ejemplo:</strong> En una red social, cada usuario es un vértice.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h3>2. Aristas o Ejes (E)</h3>
+                    <p>Son las conexiones entre vértices. Una arista conecta exactamente dos vértices. 
+                    Las aristas pueden ser <strong>dirigidas</strong> (con dirección) o <strong>no dirigidas</strong> (sin dirección).</p>
+                    <p><strong>Ejemplo:</strong> En una red social, una amistad es una arista entre dos usuarios.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h3>3. Peso o Etiqueta</h3>
+                    <p>Las aristas pueden tener un valor asociado llamado <strong>peso</strong>. Esto es útil para representar 
+                    distancias, costos, capacidades, etc.</p>
+                    <p><strong>Ejemplo:</strong> En un mapa de rutas, el peso podría ser la distancia en kilómetros entre dos ciudades.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h3>4. Grado de un Vértice</h3>
+                    <p>El <strong>grado</strong> de un vértice es el número de aristas conectadas a ese vértice.</p>
+                    <p><strong>Ejemplo:</strong> Si un usuario en una red social tiene 5 amigos, su grado es 5.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h3>5. Camino (Path)</h3>
+                    <p>Un <strong>camino</strong> es una secuencia de vértices donde cada par consecutivo está conectado por una arista.</p>
+                    <p><strong>Ejemplo:</strong> A → B → C → D es un camino.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h3>6. Ciclo (Cycle)</h3>
+                    <p>Un <strong>ciclo</strong> es un camino que comienza y termina en el mismo vértice, sin repetir vértices intermedios.</p>
+                    <p><strong>Ejemplo:</strong> A → B → C → A forma un ciclo.</p>
+                </div>
+            </section>
+
+            <section id="tipos" class="post-section">
+                <h2>Tipos de Grafos</h2>
+
+                <div class="type-card">
+                    <h3>1. Grafos No Dirigidos (Undirected Graphs)</h3>
+                    <p>Las aristas no tienen dirección. La relación entre dos vértices es bidireccional. 
+                    Si A está conectado con B, entonces B está conectado con A.</p>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Aristas sin flecha</li>
+                        <li>Relaciones simétricas</li>
+                        <li>Ejemplo: Amistades en redes sociales</li>
+                    </ul>
+                    <div class="visualization">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Nodos -->
+                            <circle cx="25" cy="25" r="8" fill="#3498db"></circle>
+                            <circle cx="75" cy="25" r="8" fill="#3498db"></circle>
+                            <!-- Arista sin dirección -->
+                            <line x1="33" y1="25" x2="67" y2="25" stroke="#000" stroke-width="2"></line>
+                            <!-- Etiquetas -->
+                            <text x="20" y="55" font-size="12">A</text>
+                            <text x="70" y="55" font-size="12">B</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="type-card">
+                    <h3>2. Grafos Dirigidos (Directed Graphs)</h3>
+                    <p>Las aristas tienen dirección, representada por flechas. La conexión va en un sentido específico. 
+                    Si hay una arista de A a B, no necesariamente existe una de B a A.</p>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Aristas con flecha (indicando dirección)</li>
+                        <li>Relaciones asimétricas</li>
+                        <li>Ejemplo: Relaciones de "seguidor" en redes sociales</li>
+                    </ul>
+                    <div class="visualization">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Nodos -->
+                            <circle cx="25" cy="25" r="8" fill="#e74c3c"></circle>
+                            <circle cx="75" cy="25" r="8" fill="#e74c3c"></circle>
+                            <!-- Arista dirigida -->
+                            <line x1="33" y1="25" x2="60" y2="25" stroke="#000" stroke-width="2"></line>
+                            <!-- Flecha -->
+                            <polygon points="67,25 60,22 62,28" fill="#000"></polygon>
+                            <!-- Etiquetas -->
+                            <text x="20" y="55" font-size="12">A</text>
+                            <text x="70" y="55" font-size="12">B</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="type-card">
+                    <h3>3. Grafos Ponderados (Weighted Graphs)</h3>
+                    <p>Las aristas tienen un valor numérico asociado (peso). Esto representa distancias, costos, tiempos, etc.</p>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Cada arista tiene un peso (número)</li>
+                        <li>Pueden ser dirigidos o no dirigidos</li>
+                        <li>Ejemplo: Mapa de rutas con distancias</li>
+                    </ul>
+                    <div class="visualization">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- Nodos -->
+                            <circle cx="25" cy="25" r="8" fill="#2ecc71"></circle>
+                            <circle cx="75" cy="25" r="8" fill="#2ecc71"></circle>
+                            <!-- Arista -->
+                            <line x1="33" y1="25" x2="67" y2="25" stroke="#000" stroke-width="2"></line>
+                            <!-- Peso -->
+                            <rect x="40" y="12" width="20" height="16" fill="white" stroke="#000"></rect>
+                            <text x="43" y="25" font-size="12">5</text>
+                            <!-- Etiquetas -->
+                            <text x="20" y="55" font-size="12">A</text>
+                            <text x="70" y="55" font-size="12">B</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="type-card">
+                    <h3>4. Grafos Simples vs. Multigrafos</h3>
+                    <p><strong>Grafo Simple:</strong> No hay múltiples aristas entre el mismo par de vértices, ni aristas que 
+                    conectan un vértice consigo mismo (bucles).</p>
+                    <p><strong>Multigrafo:</strong> Permite múltiples aristas entre los mismos vértices o bucles.</p>
+                </div>
+
+                <div class="type-card">
+                    <h3>5. Grafos Conectados vs. Desconectados</h3>
+                    <p><strong>Grafo Conectado:</strong> Existe un camino entre cualquier par de vértices.</p>
+                    <p><strong>Grafo Desconectado:</strong> Existen al menos dos vértices sin camino que los conecte.</p>
+                </div>
+            </section>
+
+            <section id="ejemplo" class="post-section">
+                <h2>Ejemplo Visual: Un Grafo No Dirigido con 5 Nodos</h2>
+                <p>A continuación, se muestra un ejemplo visual de un grafo no dirigido con 5 vértices y varias aristas:</p>
+                
+                <div class="graph-visualization">
+                    <svg width="400" height="300" viewBox="0 0 400 300" class="graph-svg">
+                        <!-- Aristas -->
+                        <line x1="200" y1="50" x2="100" y2="150" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="200" y1="50" x2="300" y2="150" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="100" y1="150" x2="150" y2="250" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="300" y1="150" x2="250" y2="250" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="100" y1="150" x2="300" y2="150" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="150" y1="250" x2="250" y2="250" stroke="#34495e" stroke-width="2"></line>
+
+                        <!-- Nodos -->
+                        <circle cx="200" cy="50" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="100" cy="150" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="300" cy="150" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="150" cy="250" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="250" cy="250" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+
+                        <!-- Etiquetas de nodos -->
+                        <text x="195" y="58" font-size="14" font-weight="bold" fill="white">A</text>
+                        <text x="95" y="158" font-size="14" font-weight="bold" fill="white">B</text>
+                        <text x="295" y="158" font-size="14" font-weight="bold" fill="white">C</text>
+                        <text x="145" y="258" font-size="14" font-weight="bold" fill="white">D</text>
+                        <text x="245" y="258" font-size="14" font-weight="bold" fill="white">E</text>
+                    </svg>
+                </div>
+
+                <div class="example-info">
+                    <h4>Información del Grafo:</h4>
+                    <ul>
+                        <li><strong>Vértices (V):</strong> {A, B, C, D, E}</li>
+                        <li><strong>Aristas (E):</strong> {A-B, A-C, B-D, C-E, B-C, D-E}</li>
+                        <li><strong>Total de Vértices:</strong> 5</li>
+                        <li><strong>Total de Aristas:</strong> 6</li>
+                        <li><strong>Grado de A:</strong> 2 (conectado a B y C)</li>
+                        <li><strong>Grado de B:</strong> 3 (conectado a A, C y D)</li>
+                        <li><strong>Grado de C:</strong> 3 (conectado a A, B y E)</li>
+                        <li><strong>Grado de D:</strong> 2 (conectado a B y E)</li>
+                        <li><strong>Grado de E:</strong> 2 (conectado a C y D)</li>
+                        <li><strong>Ejemplo de Camino:</strong> A → B → D → E</li>
+                        <li><strong>Ejemplo de Ciclo:</strong> A → B → C → A</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="conclusion" class="post-section">
+                <h2>Conclusión</h2>
+                <p>Los grafos son estructuras fundamentales que nos permiten modelar relaciones complejas entre objetos. 
+                Entender los conceptos básicos como nodos, aristas, grados y diferentes tipos de grafos es esencial para 
+                trabajar con ellos de manera efectiva.</p>
+                <p>En los próximos artículos, exploraremos cómo representar grafos en memoria (Listas y Matrices de Adyacencia) 
+                y cómo recorrerlos usando algoritmos como BFS y DFS.</p>
+
+                <div class="next-post">
+                    <p>👉 <strong>Próximo artículo:</strong> <a href="post2.html">Post #2: Representación de Grafos</a></p>
+                </div>
+            </section>
+        </article>
+
+        <!-- NAVIGATION -->
+        <div class="post-navigation">
+            <a href="index.html" class="nav-btn nav-prev">← Volver al Inicio</a>
+            <a href="post2.html" class="nav-btn nav-next">Siguiente: Representación →</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 Blog Técnico de Grafos | Estructura de Datos 2 | Desarrollado con HTML, CSS y JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

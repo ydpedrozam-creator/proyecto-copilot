@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 2: Representación de Grafos - Blog Técnico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>📊 Grafos</h1>
+                <p class="tagline">Blog Técnico sobre Estructura de Datos</p>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="post1.html">Introducción</a></li>
+                    <li><a href="post2.html" class="active">Representación</a></li>
+                    <li><a href="post3.html">Algoritmos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <article class="post">
+            <!-- POST HEADER -->
+            <header class="post-header-article">
+                <h1>Post #2: Representación de Grafos en Memoria</h1>
+                <div class="post-meta">
+                    <span class="post-date">📅 Diciembre 3, 2025</span>
+                    <span class="post-category">🏗️ Estructuras de Datos</span>
+                </div>
+            </header>
+
+            <!-- TABLE OF CONTENTS -->
+            <div class="toc">
+                <h3>📋 Contenido del Artículo</h3>
+                <ul>
+                    <li><a href="#intro">Introducción</a></li>
+                    <li><a href="#lista">Lista de Adyacencia</a></li>
+                    <li><a href="#matriz">Matriz de Adyacencia</a></li>
+                    <li><a href="#comparacion">Comparación y Complejidad</a></li>
+                    <li><a href="#conclusion">Conclusión</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTENT -->
+            <section id="intro" class="post-section">
+                <h2>Introducción</h2>
+                <p>Una de las decisiones más importantes al trabajar con grafos es <strong>cómo representarlos en memoria</strong>. 
+                La elección de la representación afecta directamente a la eficiencia del programa en términos de espacio y tiempo.</p>
+                <p>Existen dos formas principales de representar un grafo:</p>
+                <ol>
+                    <li><strong>Lista de Adyacencia</strong> - Eficiente en espacio para grafos dispersos</li>
+                    <li><strong>Matriz de Adyacencia</strong> - Eficiente en tiempo para consultar aristas</li>
+                </ol>
+            </section>
+
+            <section id="lista" class="post-section">
+                <h2>1. Lista de Adyacencia</h2>
+                <p>En la <strong>Lista de Adyacencia</strong>, cada vértice tiene una lista de todos los vértices a los que está conectado.</p>
+
+                <div class="definition-box">
+                    <p><strong>¿Cómo funciona?</strong></p>
+                    <p>Para cada vértice V, se mantiene una lista de todos los vértices adyacentes (conectados) a V.</p>
+                </div>
+
+                <h3>Ejemplo Visual: Grafo con 5 nodos</h3>
+                
+                <div class="representation-example">
+                    <h4>Grafo:</h4>
+                    <svg width="300" height="250" viewBox="0 0 300 250" class="graph-svg">
+                        <!-- Aristas -->
+                        <line x1="150" y1="30" x2="50" y2="120" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="150" y1="30" x2="250" y2="120" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="50" y1="120" x2="100" y2="220" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="250" y1="120" x2="200" y2="220" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="50" y1="120" x2="250" y2="120" stroke="#34495e" stroke-width="2"></line>
+
+                        <!-- Nodos -->
+                        <circle cx="150" cy="30" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="50" cy="120" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="250" cy="120" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="100" cy="220" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="200" cy="220" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+
+                        <!-- Etiquetas -->
+                        <text x="143" y="37" font-size="12" font-weight="bold" fill="white">A</text>
+                        <text x="43" y="127" font-size="12" font-weight="bold" fill="white">B</text>
+                        <text x="243" y="127" font-size="12" font-weight="bold" fill="white">C</text>
+                        <text x="93" y="227" font-size="12" font-weight="bold" fill="white">D</text>
+                        <text x="193" y="227" font-size="12" font-weight="bold" fill="white">E</text>
+                    </svg>
+                </div>
+
+                <h4>Representación en Lista de Adyacencia:</h4>
+                <div class="code-box">
+                    <pre>
+A → [B, C]
+B → [A, C, D]
+C → [A, B, E]
+D → [B, E]
+E → [C, D]
+                    </pre>
+                </div>
+
+                <h4>Implementación en Código (Python):</h4>
+                <div class="code-box">
+                    <pre>
+# Usando diccionario para la lista de adyacencia
+grafo_lista = {
+    'A': ['B', 'C'],
+    'B': ['A', 'C', 'D'],
+    'C': ['A', 'B', 'E'],
+    'D': ['B', 'E'],
+    'E': ['C', 'D']
+}
+
+# Acceder a los vecinos de A
+print(grafo_lista['A'])  # ['B', 'C']
+                    </pre>
+                </div>
+
+                <h3>Características de Lista de Adyacencia:</h3>
+                <div class="features-list">
+                    <div class="feature">
+                        <span class="feature-title">✅ Ventajas:</span>
+                        <ul>
+                            <li>Usa menos memoria para grafos dispersos (pocos enlaces)</li>
+                            <li>Mejor para recorrer todos los vecinos de un nodo</li>
+                            <li>Ideal para algoritmos como BFS y DFS</li>
+                        </ul>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-title">❌ Desventajas:</span>
+                        <ul>
+                            <li>Más lenta para verificar si existe una arista específica</li>
+                            <li>Requiere recorrer la lista</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Complejidad de Operaciones:</h3>
+                <div class="complexity-table">
+                    <table>
+                        <tr>
+                            <th>Operación</th>
+                            <th>Complejidad</th>
+                        </tr>
+                        <tr>
+                            <td>Insertar vértice</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Insertar arista</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Eliminar vértice</td>
+                            <td>O(V + E)</td>
+                        </tr>
+                        <tr>
+                            <td>Verificar arista (u, v)</td>
+                            <td>O(grado de u)</td>
+                        </tr>
+                        <tr>
+                            <td>Obtener vecinos</td>
+                            <td>O(grado del vértice)</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="matriz" class="post-section">
+                <h2>2. Matriz de Adyacencia</h2>
+                <p>En la <strong>Matriz de Adyacencia</strong>, se utiliza una matriz cuadrada donde cada posición (i, j) 
+                representa si existe una arista entre los vértices i y j.</p>
+
+                <div class="definition-box">
+                    <p><strong>¿Cómo funciona?</strong></p>
+                    <p>Se crea una matriz de N×N (donde N es el número de vértices). Si existe una arista entre vértice i y j, 
+                    se coloca 1 (o el peso) en la posición (i, j). Si no existe, se coloca 0.</p>
+                </div>
+
+                <h3>Ejemplo Visual: Grafo con 5 nodos</h3>
+
+                <div class="representation-example">
+                    <h4>Grafo (mismo del anterior):</h4>
+                    <svg width="300" height="250" viewBox="0 0 300 250" class="graph-svg">
+                        <!-- Aristas -->
+                        <line x1="150" y1="30" x2="50" y2="120" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="150" y1="30" x2="250" y2="120" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="50" y1="120" x2="100" y2="220" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="250" y1="120" x2="200" y2="220" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="50" y1="120" x2="250" y2="120" stroke="#34495e" stroke-width="2"></line>
+
+                        <!-- Nodos -->
+                        <circle cx="150" cy="30" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="50" cy="120" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="250" cy="120" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="100" cy="220" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="200" cy="220" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+
+                        <!-- Etiquetas -->
+                        <text x="143" y="37" font-size="12" font-weight="bold" fill="white">A</text>
+                        <text x="43" y="127" font-size="12" font-weight="bold" fill="white">B</text>
+                        <text x="243" y="127" font-size="12" font-weight="bold" fill="white">C</text>
+                        <text x="93" y="227" font-size="12" font-weight="bold" fill="white">D</text>
+                        <text x="193" y="227" font-size="12" font-weight="bold" fill="white">E</text>
+                    </svg>
+                </div>
+
+                <h4>Representación en Matriz de Adyacencia:</h4>
+                <div class="matrix-visualization">
+                    <table class="matrix-table">
+                        <tr>
+                            <th></th>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>E</th>
+                        </tr>
+                        <tr>
+                            <th>A</th>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>B</th>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>C</th>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th>D</th>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th>E</th>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h4>Interpretación:</h4>
+                <ul>
+                    <li>matriz[A][B] = 1 → Existe arista entre A y B</li>
+                    <li>matriz[A][D] = 0 → NO existe arista entre A y D</li>
+                    <li>La diagonal es 0 (sin bucles)</li>
+                    <li>Es simétrica (grafo no dirigido)</li>
+                </ul>
+
+                <h4>Implementación en Código (Python):</h4>
+                <div class="code-box">
+                    <pre>
+# Usando lista de listas (matrix)
+import numpy as np
+
+# Crear matriz 5x5 inicializada en 0
+grafo_matriz = [
+    [0, 1, 1, 0, 0],  # A
+    [1, 0, 1, 1, 0],  # B
+    [1, 1, 0, 0, 1],  # C
+    [0, 1, 0, 0, 1],  # D
+    [0, 0, 1, 1, 0]   # E
+]
+
+# Verificar si existe arista entre A (0) y B (1)
+print(grafo_matriz[0][1])  # 1 (sí existe)
+
+# Verificar si existe arista entre A (0) y D (3)
+print(grafo_matriz[0][3])  # 0 (no existe)
+                    </pre>
+                </div>
+
+                <h3>Características de Matriz de Adyacencia:</h3>
+                <div class="features-list">
+                    <div class="feature">
+                        <span class="feature-title">✅ Ventajas:</span>
+                        <ul>
+                            <li>Verificación muy rápida de si existe una arista</li>
+                            <li>Acceso O(1) a cualquier arista</li>
+                            <li>Simple de implementar</li>
+                            <li>Buena para grafos densos</li>
+                        </ul>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-title">❌ Desventajas:</span>
+                        <ul>
+                            <li>Usa mucho espacio para grafos dispersos</li>
+                            <li>Complejidad espacial O(V²) independiente de E</li>
+                            <li>Lenta para listar todos los vecinos de un nodo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Complejidad de Operaciones:</h3>
+                <div class="complexity-table">
+                    <table>
+                        <tr>
+                            <th>Operación</th>
+                            <th>Complejidad</th>
+                        </tr>
+                        <tr>
+                            <td>Insertar vértice</td>
+                            <td>O(V²)</td>
+                        </tr>
+                        <tr>
+                            <td>Insertar arista</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Eliminar vértice</td>
+                            <td>O(V²)</td>
+                        </tr>
+                        <tr>
+                            <td>Verificar arista (u, v)</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Obtener vecinos</td>
+                            <td>O(V)</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="comparacion" class="post-section">
+                <h2>Comparación y Selección</h2>
+
+                <h3>¿Cuándo usar Lista de Adyacencia?</h3>
+                <div class="recommendation-box recommendation-list">
+                    <ul>
+                        <li>Cuando el grafo es <strong>disperso</strong> (pocas aristas)</li>
+                        <li>Cuando necesitas recorrer todos los vecinos frecuentemente</li>
+                        <li>Cuando quieres optimizar el uso de memoria</li>
+                        <li>Para algoritmos como BFS, DFS, Dijkstra</li>
+                    </ul>
+                </div>
+
+                <h3>¿Cuándo usar Matriz de Adyacencia?</h3>
+                <div class="recommendation-box recommendation-matrix">
+                    <ul>
+                        <li>Cuando el grafo es <strong>denso</strong> (muchas aristas)</li>
+                        <li>Cuando necesitas verificar frecuentemente si existe una arista</li>
+                        <li>Cuando trabajas con grafos pequeños</li>
+                        <li>Cuando los algoritmos requieren acceso rápido a aristas específicas</li>
+                    </ul>
+                </div>
+
+                <h3>Tabla Comparativa:</h3>
+                <div class="complexity-table">
+                    <table>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Lista de Adyacencia</th>
+                            <th>Matriz de Adyacencia</th>
+                        </tr>
+                        <tr>
+                            <td>Espacio</td>
+                            <td>O(V + E)</td>
+                            <td>O(V²)</td>
+                        </tr>
+                        <tr>
+                            <td>Verificar arista</td>
+                            <td>O(grado)</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Vecinos de un nodo</td>
+                            <td>O(grado)</td>
+                            <td>O(V)</td>
+                        </tr>
+                        <tr>
+                            <td>Grafos Dispersos</td>
+                            <td>⭐⭐⭐ Mejor</td>
+                            <td>❌ Malo</td>
+                        </tr>
+                        <tr>
+                            <td>Grafos Densos</td>
+                            <td>❌ Normal</td>
+                            <td>⭐⭐⭐ Mejor</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="conclusion" class="post-section">
+                <h2>Conclusión</h2>
+                <p>La elección entre Lista de Adyacencia y Matriz de Adyacencia depende de:</p>
+                <ul>
+                    <li>La <strong>densidad del grafo</strong></li>
+                    <li>Las <strong>operaciones más frecuentes</strong></li>
+                    <li>Las <strong>restricciones de memoria</strong></li>
+                    <li>Los <strong>requisitos de rendimiento</strong></li>
+                </ul>
+                <p>En la mayoría de los casos, para grafos generales, la <strong>Lista de Adyacencia</strong> es la mejor opción 
+                porque es más flexible y eficiente en memoria.</p>
+
+                <div class="next-post">
+                    <p>👉 <strong>Próximo artículo:</strong> <a href="post3.html">Post #3: Algoritmos de Recorrido (BFS y DFS)</a></p>
+                </div>
+            </section>
+        </article>
+
+        <!-- NAVIGATION -->
+        <div class="post-navigation">
+            <a href="post1.html" class="nav-btn nav-prev">← Anterior: Introducción</a>
+            <a href="post3.html" class="nav-btn nav-next">Siguiente: Algoritmos →</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 Blog Técnico de Grafos | Estructura de Datos 2 | Desarrollado con HTML, CSS y JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

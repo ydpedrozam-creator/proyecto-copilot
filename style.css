@@ -1,0 +1,1014 @@
+/* ========================================
+   ESTILOS GLOBALES
+   ======================================== */
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --light-bg: #ecf0f1;
+    --dark-text: #2c3e50;
+    --light-text: #7f8c8d;
+    --border-color: #bdc3c7;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #f5f7fa;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================
+   HEADER Y NAVEGACIÓN
+   ======================================== */
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ======================================== */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+/* ========================================
+   SECCIONES DE INTRODUCCIÓN
+   ======================================== */
+
+.intro-section {
+    margin-bottom: 4rem;
+}
+
+.intro-section h2,
+.posts-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* ========================================
+   POSTS GRID
+   ======================================== */
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.post-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.post-header h3 {
+    flex-grow: 1;
+}
+
+.post-number {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.post-excerpt {
+    padding: 1.5rem 2rem;
+    color: var(--light-text);
+    flex-grow: 1;
+}
+
+.post-topics {
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.topic {
+    background: var(--light-bg);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.read-more {
+    display: block;
+    padding: 1.5rem 2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-top: 1px solid var(--light-bg);
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--accent-color);
+    background: var(--light-bg);
+}
+
+/* ========================================
+   SOBRE EL PROYECTO
+   ======================================== */
+
+.about-section {
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-top: 4rem;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.about-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.repo-info {
+    background: var(--light-bg);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+}
+
+.repo-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.repo-info a:hover {
+    color: var(--accent-color);
+}
+
+/* ========================================
+   ESTILOS DE POSTS
+   ======================================== */
+
+.post {
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.post-header-article {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1.5rem;
+}
+
+.post-header-article h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    display: flex;
+    gap: 2rem;
+    color: var(--light-text);
+    flex-wrap: wrap;
+}
+
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ========================================
+   TABLA DE CONTENIDOS
+   ======================================== */
+
+.toc {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.toc h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.toc ul {
+    list-style: none;
+}
+
+.toc li {
+    margin-bottom: 0.5rem;
+}
+
+.toc a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toc a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* ========================================
+   SECCIONES DE POSTS
+   ======================================== */
+
+.post-section {
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.post-section h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.post-section h3 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.post-section h4 {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.7rem;
+    margin-top: 1rem;
+}
+
+.post-section p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.post-section ul,
+.post-section ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-section li {
+    margin-bottom: 0.7rem;
+}
+
+/* ========================================
+   DEFINICIONES Y CAJAS
+   ======================================== */
+
+.definition-box {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+}
+
+.definition-box p {
+    margin-bottom: 0.8rem;
+}
+
+.definition-box ul {
+    margin-left: 2rem;
+}
+
+.concept-card,
+.type-card {
+    background: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.concept-card:hover,
+.type-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateX(5px);
+}
+
+.concept-card h3,
+.type-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+/* ========================================
+   CÓDIGO
+   ======================================== */
+
+.code-box {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 1.5rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-color);
+}
+
+.code-box pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ========================================
+   CARACTERÍSTICAS Y LISTAS
+   ======================================== */
+
+.applications-list {
+    list-style: none;
+    margin-left: 0 !important;
+}
+
+.applications-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.applications-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.feature {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 2px solid var(--light-bg);
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.feature-title {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.feature li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+/* ========================================
+   TABLAS
+   ======================================== */
+
+.complexity-table,
+.matrix-visualization,
+.comparison-table {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+table th {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-bg);
+}
+
+table tr:hover {
+    background: #f8f9fa;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+.matrix-table th:first-child,
+.matrix-table td:first-child {
+    background: #f8f9fa;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* ========================================
+   VISUALIZACIONES
+   ======================================== */
+
+.graph-visualization,
+.representation-example,
+.matrix-visualization {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.graph-svg,
+.visualization svg {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.visualization {
+    display: inline-block;
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 0.5rem;
+}
+
+/* ========================================
+   EJEMPLO INFO
+   ======================================== */
+
+.example-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--success-color);
+}
+
+.example-info h4 {
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.example-info ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.example-info li {
+    margin-bottom: 0.7rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.example-info li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+}
+
+/* ========================================
+   PASO A PASO
+   ======================================== */
+
+.step-by-step {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+    border: 2px solid var(--light-bg);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.step h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.step p {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin-top: 1rem;
+}
+
+/* ========================================
+   RECOMENDACIONES
+   ======================================== */
+
+.recommendation-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 2px solid var(--light-bg);
+    margin: 1rem 0;
+}
+
+.recommendation-list {
+    border-left-color: var(--success-color);
+    border-left-width: 4px;
+}
+
+.recommendation-matrix {
+    border-left-color: var(--warning-color);
+    border-left-width: 4px;
+}
+
+/* ========================================
+   INFORMACIÓN DE COMPLEJIDAD
+   ======================================== */
+
+.complexity-info {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+}
+
+.complexity-info p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* ========================================
+   NEXT POST
+   ======================================== */
+
+.next-post {
+    background: linear-gradient(135deg, var(--success-color), #27ae60);
+    color: white;
+    padding: 2rem;
+    border-radius: 6px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.next-post p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.next-post a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.next-post a:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   NAVEGACIÓN DE POSTS
+   ======================================== */
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-prev {
+    background: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.nav-prev:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(-5px);
+}
+
+.nav-next {
+    background: var(--primary-color);
+    color: white;
+}
+
+.nav-next:hover {
+    background: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navbar ul {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .post-header-article h1 {
+        font-size: 1.8rem;
+    }
+
+    .post {
+        padding: 1.5rem;
+    }
+
+    .features,
+    .posts-grid,
+    .features-list,
+    .step-by-step {
+        grid-template-columns: 1fr;
+    }
+
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .post-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .post-navigation {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    table th,
+    table td {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 0;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .navbar ul {
+        gap: 0.5rem;
+    }
+
+    .navbar a {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 1rem 10px;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .post {
+        padding: 1rem;
+    }
+
+    .post-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .post-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .toc {
+        padding: 1rem;
+    }
+
+    .code-box {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-card {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.post-section {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* ========================================
+   SCROLLBAR PERSONALIZADO
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}

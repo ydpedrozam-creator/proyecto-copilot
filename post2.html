@@ -75,26 +75,50 @@
                 <div class="representation-example">
                     <h4>Grafo:</h4>
                     <svg width="300" height="250" viewBox="0 0 300 250" class="graph-svg">
+                        <defs>
+                            <linearGradient id="edgeGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.9" />
+                                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:0.9" />
+                            </linearGradient>
+                            <radialGradient id="nodeGradient2" cx="30%" cy="30%">
+                                <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+                            </radialGradient>
+                            <filter id="glow2">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
                         <!-- Aristas -->
-                        <line x1="150" y1="30" x2="50" y2="120" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="150" y1="30" x2="250" y2="120" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="50" y1="120" x2="100" y2="220" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="250" y1="120" x2="200" y2="220" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="50" y1="120" x2="250" y2="120" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="150" y1="30" x2="50" y2="120" stroke="url(#edgeGradient2)" stroke-width="2.5"></line>
+                        <line x1="150" y1="30" x2="250" y2="120" stroke="url(#edgeGradient2)" stroke-width="2.5"></line>
+                        <line x1="50" y1="120" x2="100" y2="220" stroke="url(#edgeGradient2)" stroke-width="2.5"></line>
+                        <line x1="250" y1="120" x2="200" y2="220" stroke="url(#edgeGradient2)" stroke-width="2.5"></line>
+                        <line x1="50" y1="120" x2="250" y2="120" stroke="url(#edgeGradient2)" stroke-width="2.5"></line>
+
+                        <!-- Efectos de brillo -->
+                        <circle cx="150" cy="30" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow2)"></circle>
+                        <circle cx="50" cy="120" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow2)"></circle>
+                        <circle cx="250" cy="120" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow2)"></circle>
+                        <circle cx="100" cy="220" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow2)"></circle>
+                        <circle cx="200" cy="220" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow2)"></circle>
 
                         <!-- Nodos -->
-                        <circle cx="150" cy="30" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="50" cy="120" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="250" cy="120" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="100" cy="220" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="200" cy="220" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="150" cy="30" r="12" fill="url(#nodeGradient2)" stroke="#00ffff" stroke-width="2" filter="url(#glow2)"></circle>
+                        <circle cx="50" cy="120" r="12" fill="url(#nodeGradient2)" stroke="#00ffff" stroke-width="2" filter="url(#glow2)"></circle>
+                        <circle cx="250" cy="120" r="12" fill="url(#nodeGradient2)" stroke="#00ffff" stroke-width="2" filter="url(#glow2)"></circle>
+                        <circle cx="100" cy="220" r="12" fill="url(#nodeGradient2)" stroke="#00ffff" stroke-width="2" filter="url(#glow2)"></circle>
+                        <circle cx="200" cy="220" r="12" fill="url(#nodeGradient2)" stroke="#00ffff" stroke-width="2" filter="url(#glow2)"></circle>
 
                         <!-- Etiquetas -->
-                        <text x="143" y="37" font-size="12" font-weight="bold" fill="white">A</text>
-                        <text x="43" y="127" font-size="12" font-weight="bold" fill="white">B</text>
-                        <text x="243" y="127" font-size="12" font-weight="bold" fill="white">C</text>
-                        <text x="93" y="227" font-size="12" font-weight="bold" fill="white">D</text>
-                        <text x="193" y="227" font-size="12" font-weight="bold" fill="white">E</text>
+                        <text x="150" y="37" font-size="13" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                        <text x="43" y="127" font-size="13" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                        <text x="257" y="127" font-size="13" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                        <text x="93" y="227" font-size="13" font-weight="bold" fill="white" text-anchor="middle">D</text>
+                        <text x="207" y="227" font-size="13" font-weight="bold" fill="white" text-anchor="middle">E</text>
                     </svg>
                 </div>
 
@@ -192,26 +216,50 @@ print(grafo_lista['A'])  # ['B', 'C']
                 <div class="representation-example">
                     <h4>Grafo (mismo del anterior):</h4>
                     <svg width="300" height="250" viewBox="0 0 300 250" class="graph-svg">
+                        <defs>
+                            <linearGradient id="edgeGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.9" />
+                                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:0.9" />
+                            </linearGradient>
+                            <radialGradient id="nodeGradient3" cx="30%" cy="30%">
+                                <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+                            </radialGradient>
+                            <filter id="glow3">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
                         <!-- Aristas -->
-                        <line x1="150" y1="30" x2="50" y2="120" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="150" y1="30" x2="250" y2="120" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="50" y1="120" x2="100" y2="220" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="250" y1="120" x2="200" y2="220" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="50" y1="120" x2="250" y2="120" stroke="#34495e" stroke-width="2"></line>
+                        <line x1="150" y1="30" x2="50" y2="120" stroke="url(#edgeGradient3)" stroke-width="2.5"></line>
+                        <line x1="150" y1="30" x2="250" y2="120" stroke="url(#edgeGradient3)" stroke-width="2.5"></line>
+                        <line x1="50" y1="120" x2="100" y2="220" stroke="url(#edgeGradient3)" stroke-width="2.5"></line>
+                        <line x1="250" y1="120" x2="200" y2="220" stroke="url(#edgeGradient3)" stroke-width="2.5"></line>
+                        <line x1="50" y1="120" x2="250" y2="120" stroke="url(#edgeGradient3)" stroke-width="2.5"></line>
+
+                        <!-- Efectos de brillo -->
+                        <circle cx="150" cy="30" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow3)"></circle>
+                        <circle cx="50" cy="120" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow3)"></circle>
+                        <circle cx="250" cy="120" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow3)"></circle>
+                        <circle cx="100" cy="220" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow3)"></circle>
+                        <circle cx="200" cy="220" r="18" fill="#00ffff" opacity="0.15" filter="url(#glow3)"></circle>
 
                         <!-- Nodos -->
-                        <circle cx="150" cy="30" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="50" cy="120" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="250" cy="120" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="100" cy="220" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="200" cy="220" r="10" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                        <circle cx="150" cy="30" r="12" fill="url(#nodeGradient3)" stroke="#00ffff" stroke-width="2" filter="url(#glow3)"></circle>
+                        <circle cx="50" cy="120" r="12" fill="url(#nodeGradient3)" stroke="#00ffff" stroke-width="2" filter="url(#glow3)"></circle>
+                        <circle cx="250" cy="120" r="12" fill="url(#nodeGradient3)" stroke="#00ffff" stroke-width="2" filter="url(#glow3)"></circle>
+                        <circle cx="100" cy="220" r="12" fill="url(#nodeGradient3)" stroke="#00ffff" stroke-width="2" filter="url(#glow3)"></circle>
+                        <circle cx="200" cy="220" r="12" fill="url(#nodeGradient3)" stroke="#00ffff" stroke-width="2" filter="url(#glow3)"></circle>
 
                         <!-- Etiquetas -->
-                        <text x="143" y="37" font-size="12" font-weight="bold" fill="white">A</text>
-                        <text x="43" y="127" font-size="12" font-weight="bold" fill="white">B</text>
-                        <text x="243" y="127" font-size="12" font-weight="bold" fill="white">C</text>
-                        <text x="93" y="227" font-size="12" font-weight="bold" fill="white">D</text>
-                        <text x="193" y="227" font-size="12" font-weight="bold" fill="white">E</text>
+                        <text x="150" y="37" font-size="13" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                        <text x="43" y="127" font-size="13" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                        <text x="257" y="127" font-size="13" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                        <text x="93" y="227" font-size="13" font-weight="bold" fill="white" text-anchor="middle">D</text>
+                        <text x="207" y="227" font-size="13" font-weight="bold" fill="white" text-anchor="middle">E</text>
                     </svg>
                 </div>
 

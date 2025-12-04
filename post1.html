@@ -224,31 +224,68 @@
 
             <section id="ejemplo" class="post-section">
                 <h2>Ejemplo Visual: Un Grafo No Dirigido con 5 Nodos</h2>
-                <p>A continuación, se muestra un ejemplo visual de un grafo no dirigido con 5 vértices y varias aristas:</p>
+                <p>A continuación, se muestra un ejemplo visual de un grafo no dirigido con 5 vértices con diseño moderno y futurista:</p>
                 
                 <div class="graph-visualization">
-                    <svg width="400" height="300" viewBox="0 0 400 300" class="graph-svg">
-                        <!-- Aristas -->
-                        <line x1="200" y1="50" x2="100" y2="150" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="200" y1="50" x2="300" y2="150" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="100" y1="150" x2="150" y2="250" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="300" y1="150" x2="250" y2="250" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="100" y1="150" x2="300" y2="150" stroke="#34495e" stroke-width="2"></line>
-                        <line x1="150" y1="250" x2="250" y2="250" stroke="#34495e" stroke-width="2"></line>
-
-                        <!-- Nodos -->
-                        <circle cx="200" cy="50" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="100" cy="150" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="300" cy="150" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="150" cy="250" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
-                        <circle cx="250" cy="250" r="12" fill="#3498db" stroke="#2c3e50" stroke-width="2"></circle>
+                    <svg width="400" height="350" viewBox="0 0 400 350" class="graph-svg">
+                        <defs>
+                            <!-- Gradiente para las aristas futurista -->
+                            <linearGradient id="edgeGradientPost1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.9" />
+                                <stop offset="50%" style="stop-color:#0099ff;stop-opacity:0.9" />
+                                <stop offset="100%" style="stop-color:#006699;stop-opacity:0.9" />
+                            </linearGradient>
+                            
+                            <!-- Gradiente radial para nodos -->
+                            <radialGradient id="nodeGradientPost1" cx="30%" cy="30%">
+                                <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                <stop offset="70%" style="stop-color:#0099ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+                            </radialGradient>
+                            
+                            <!-- Efecto de brillo glow -->
+                            <filter id="glowPost1">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            
+                            <!-- Sombra de aristas -->
+                            <filter id="shadowPost1">
+                                <feDropShadow dx="0" dy="0" stdDeviation="2" flood-opacity="0.5"/>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Aristas con gradiente y efecto sombra -->
+                        <line x1="200" y1="50" x2="100" y2="150" stroke="url(#edgeGradientPost1)" stroke-width="3" filter="url(#shadowPost1)"></line>
+                        <line x1="200" y1="50" x2="300" y2="150" stroke="url(#edgeGradientPost1)" stroke-width="3" filter="url(#shadowPost1)"></line>
+                        <line x1="100" y1="150" x2="150" y2="280" stroke="url(#edgeGradientPost1)" stroke-width="3" filter="url(#shadowPost1)"></line>
+                        <line x1="300" y1="150" x2="250" y2="280" stroke="url(#edgeGradientPost1)" stroke-width="3" filter="url(#shadowPost1)"></line>
+                        <line x1="100" y1="150" x2="300" y2="150" stroke="url(#edgeGradientPost1)" stroke-width="3" filter="url(#shadowPost1)"></line>
+                        <line x1="150" y1="280" x2="250" y2="280" stroke="url(#edgeGradientPost1)" stroke-width="3" filter="url(#shadowPost1)"></line>
+                        
+                        <!-- Efecto de brillo de fondo para nodos -->
+                        <circle cx="200" cy="50" r="22" fill="#00ffff" opacity="0.15" filter="url(#glowPost1)"></circle>
+                        <circle cx="100" cy="150" r="22" fill="#00ffff" opacity="0.15" filter="url(#glowPost1)"></circle>
+                        <circle cx="300" cy="150" r="22" fill="#00ffff" opacity="0.15" filter="url(#glowPost1)"></circle>
+                        <circle cx="150" cy="280" r="22" fill="#00ffff" opacity="0.15" filter="url(#glowPost1)"></circle>
+                        <circle cx="250" cy="280" r="22" fill="#00ffff" opacity="0.15" filter="url(#glowPost1)"></circle>
+                        
+                        <!-- Nodos principales con gradiente -->
+                        <circle cx="200" cy="50" r="15" fill="url(#nodeGradientPost1)" stroke="#00ffff" stroke-width="2.5" filter="url(#glowPost1)"></circle>
+                        <circle cx="100" cy="150" r="15" fill="url(#nodeGradientPost1)" stroke="#00ffff" stroke-width="2.5" filter="url(#glowPost1)"></circle>
+                        <circle cx="300" cy="150" r="15" fill="url(#nodeGradientPost1)" stroke="#00ffff" stroke-width="2.5" filter="url(#glowPost1)"></circle>
+                        <circle cx="150" cy="280" r="15" fill="url(#nodeGradientPost1)" stroke="#00ffff" stroke-width="2.5" filter="url(#glowPost1)"></circle>
+                        <circle cx="250" cy="280" r="15" fill="url(#nodeGradientPost1)" stroke="#00ffff" stroke-width="2.5" filter="url(#glowPost1)"></circle>
 
                         <!-- Etiquetas de nodos -->
-                        <text x="195" y="58" font-size="14" font-weight="bold" fill="white">A</text>
-                        <text x="95" y="158" font-size="14" font-weight="bold" fill="white">B</text>
-                        <text x="295" y="158" font-size="14" font-weight="bold" fill="white">C</text>
-                        <text x="145" y="258" font-size="14" font-weight="bold" fill="white">D</text>
-                        <text x="245" y="258" font-size="14" font-weight="bold" fill="white">E</text>
+                        <text x="200" y="57" font-size="16" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                        <text x="100" y="157" font-size="16" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                        <text x="300" y="157" font-size="16" font-weight="bold" fill="white" text-anchor="middle">C</text>
+                        <text x="150" y="287" font-size="16" font-weight="bold" fill="white" text-anchor="middle">D</text>
+                        <text x="250" y="287" font-size="16" font-weight="bold" fill="white" text-anchor="middle">E</text>
                     </svg>
                 </div>
 
